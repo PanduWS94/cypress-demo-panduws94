@@ -50,9 +50,9 @@ project-root/
 ├── test/
 │   ├── features/
 │   │   └── element.feature
-│   └── steps/
-│       └── element.js
-├── cypress.config.js
+│   ├── steps/
+│   │   └── element.js
+│   └── cypress.config.js
 ├── .gitignore
 ├── package.json
 ├── pnpm-lock.yaml
