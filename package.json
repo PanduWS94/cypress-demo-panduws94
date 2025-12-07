@@ -1,0 +1,21 @@
+{
+	"scripts": {
+		"demo-qa:open": "pnpm cypress open --config-file e2e/cypress.config.js",
+		"demo-qa:headless": "pnpm cypress run --config-file e2e/cypress.config.js --browser chrome --headless"
+	},
+	"devDependencies": {
+		"@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+		"@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+		"cypress": "^15.7.1",
+		"cypress-downloadfile": "^1.2.4",
+		"cypress-file-upload": "^5.0.8",
+		"cypress-localstorage-commands": "^2.2.8",
+		"cypress-real-events": "^1.15.0",
+		"esbuild": "^0.24.2"
+	},
+	"cypress-cucumber-preprocessor": {
+		"stepDefinitions": [
+			"e2e/test/**/*.{js,ts}"
+		]
+	}
+}
