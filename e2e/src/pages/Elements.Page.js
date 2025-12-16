@@ -38,7 +38,40 @@ class ElementsPage {
         this.submittedData.should('contain.text', permanentAddress);
     }
 
+    get directoryElements() {
+        return cy.get('[title="Expand all"]');
+    }
+    expandDirectory() {
+        this.directoryElements.click();
+    }
+
+    get checkboxElements() {
+        return cy.get('.rct-title');
+    }
+    checkCheckbox(checkbox) {
+        this.checkboxElements.contains(checkbox).click();
+    }
+
+    get checkboxResult() {
+        return cy.get('#result', 'mt-3');
+    }
+    verifySelectedItems(headerText, selectedItems) {
+        this.checkboxResult.should('contain.text', headerText + selectedItems);
+    }
+
+    get radioButtonElements() {
+        return cy.get('.custom-control-label');
+    }
+    clickRadioButton(radioOption) {
+        this.radioButtonElements.contains(radioOption).click();
+    }
+
+    get radioButtonMessage() {
+        return cy.get('.text-success');
+    }
+    verifyRadioButtonMessage(radioOption) {
+        this.radioButtonMessage.should('contain.text', radioOption);
+    }
 
 }
-
 export default ElementsPage;

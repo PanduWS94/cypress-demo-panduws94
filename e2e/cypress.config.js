@@ -9,7 +9,7 @@ module.exports = defineConfig({
     viewportHeight: 954,
     viewportWidth: 1874,
     experimentalStudio: false,
-    defaultCommandTimeout: 60000,
+    defaultCommandTimeout: 10000,
     e2e: {
         specPattern: [
             "e2e/test/features/**"

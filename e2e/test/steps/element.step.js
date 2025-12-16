@@ -22,3 +22,24 @@ When('User input {string} in Permanent Address field', (permanentAddress) => {
 Then('User will see Submitted data with {string} {string} {string} {string}', (fullName, email, currentAddress, permanentAddress) => {
     elements.verifySubmittedData(fullName, email, currentAddress, permanentAddress);
 });
+
+When('User expand all directory', () => {
+    elements.expandDirectory();
+});
+
+When('User check the {string} checkbox', (checkbox) => {
+    elements.checkCheckbox(checkbox);
+});
+
+Then('User will see checkbox {string} with {string}', (headerText, selectedItems) => {
+    elements.verifySelectedItems(headerText, selectedItems);
+});
+
+When('User click the {string} radio button', (radioOption) => {
+    elements.clickRadioButton(radioOption);
+});
+
+Then('User will see radio button {string}', (radioOption) => {
+    elements.verifyRadioButtonMessage(radioOption);
+});
+
