@@ -44,12 +44,28 @@ Feature: HomePage Demo Access
     #         | selected items                    |
     #         | desktopnotescommandsreactwordFile |
 
-    Scenario Outline: Radio Button - Click Element and Verify
+    # Scenario Outline: Radio Button - Click Element and Verify
+    #     When User click Menu "Elements"
+    #     When User click SubMenu "Radio Button"
+    #     When User click the "<RadioOption>" radio button
+    #     Then User will see radio button "<RadioOption>"
+    #     Examples:
+    #         | RadioOption |
+    #         | Yes         |
+    #         | Impressive  |
+
+    Scenario Outline: Web Tables - Add New Record and Verify
         When User click Menu "Elements"
-        When User click SubMenu "Radio Button"
-        When User click the "<RadioOption>" radio button
-        Then User will see radio button "<RadioOption>"
+        When User click SubMenu "Web Tables"
+        When User click Add button
+        When User input "<FirstName>" in First Name field
+        When User input "<LastName>" in Last Name field
+        When User input "<Email>" in Email field
+        When User input "<Age>" in Age field
+        When User input "<Salary>" in Salary field
+        When User input "<Department>" in Department field
+        When User click Submit button
+        Then User will see new record with "<FirstName>" "<LastName>" "<Email>" "<Age>" "<Salary>" "<Department>"
         Examples:
-            | RadioOption |
-            | Yes         |
-            | Impressive  |
+            | FirstName | LastName | Email                     | Age | Salary | Department |
+            | Pandu     | Wibisono | testing.pandu@testing.com | 30  | 5000   | IT         |
