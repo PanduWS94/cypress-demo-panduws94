@@ -43,3 +43,26 @@ Then('User will see radio button {string}', (radioOption) => {
     elements.verifyRadioButtonMessage(radioOption);
 });
 
+When('User input {string} in First Name field', (FirstName) => {
+    elements.inputFirstName(FirstName);
+});
+
+When('User input {string} in Last Name field', (LastName) => {
+    elements.inputLastName(LastName);
+});
+
+When('User input {string} in Age field', (age) => {
+    elements.inputAge(age);
+});
+
+When('User input {string} in Salary field', (salary) => {
+    elements.inputSalary(salary);
+});
+
+When('User input {string} in Department field', (department) => {
+    elements.inputDepartment(department);
+});
+
+Then('User will see new record with {string} {string} {string} {string} {string} {string}', (FirstName, LastName, email, age, salary, department) => {
+    elements.verifyAddedDataInTable(FirstName, LastName, email, age, salary, department);
+});

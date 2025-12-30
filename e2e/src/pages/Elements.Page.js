@@ -1,3 +1,7 @@
+import CommonPage from './Common.Page.js';
+
+const common = new CommonPage();
+
 class ElementsPage {
 
     get userNameField() {
@@ -71,6 +75,52 @@ class ElementsPage {
     }
     verifyRadioButtonMessage(radioOption) {
         this.radioButtonMessage.should('contain.text', radioOption);
+    }
+
+    get firstNameField() {
+        return cy.get('#firstName');
+    }
+    inputFirstName(FirstName) {
+        this.firstNameField.type(FirstName);
+    }
+
+    get lastNameField() {
+        return cy.get('#lastName');
+    }
+    inputLastName(LastName) {
+        this.lastNameField.type(LastName);
+    }
+
+    get emailField() {
+        return cy.get('#userEmail');
+    }
+    inputEmail(email) {
+        this.emailField.type(email);
+    }
+
+    get ageField() {
+        return cy.get('#age');
+    }
+    inputAge(age) {
+        this.ageField.type(age);
+    }
+
+    get salaryField() {
+        return cy.get('#salary');
+    }
+    inputSalary(salary) {
+        this.salaryField.type(salary);
+    }
+
+    get departmentField() {
+        return cy.get('#department');
+    }
+    inputDepartment(department) {
+        this.departmentField.type(department);
+    }
+
+    verifyAddedDataInTable(FirstName, LastName, email, age, salary, department) {
+        common.dataTableRowElements(FirstName, LastName, email, age, salary, department).should('exist');
     }
 
 }

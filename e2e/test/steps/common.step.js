@@ -25,3 +25,7 @@ Then('User will see Page {string}', (SubMenu) => {
 When('User click Submit button', () => {
     common.clickSubmitButton();
 });
+
+When('User click Add button', () => {
+    common.clickAddButton();
+});
