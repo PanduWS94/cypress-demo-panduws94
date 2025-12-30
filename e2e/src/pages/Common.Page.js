@@ -40,6 +40,26 @@ class CommonPage {
         });
     }
 
+    get downloadLink() {
+        return cy.get('#downloadButton');
+    }
+    downloadFile() {
+        this.downloadLink.click();
+    }
+
+    verifyDownloadedFile(fileName) {
+        const downloadsFolder = Cypress.config('downloadsFolder');
+        cy.readFile(`${downloadsFolder}/${fileName}`).should('exist');
+    }
+
+    get uploadFileInput() {
+        return cy.get('input[type="file"]');
+    }
+    uploadFile(fileName2) {
+        const filePath = `e2e/src/cypress/assets/${fileName2}`;
+        this.uploadFileInput.selectFile(filePath, { force: true });
+    }
+
 }
 
 export default CommonPage;

@@ -29,3 +29,16 @@ When('User click Submit button', () => {
 When('User click Add button', () => {
     common.clickAddButton();
 });
+
+When('User download file', () => {
+    common.downloadFile();
+});
+
+Then('User will see downloaded file {string} in downloads folder', (fileName) => {
+    common.verifyDownloadedFile(fileName);
+    cy.task('deleteDownloadedFiles', Cypress.config('downloadsFolder'));
+});
+
+When('User upload file {string}', (fileName2) => {
+    common.uploadFile(fileName2);
+});
